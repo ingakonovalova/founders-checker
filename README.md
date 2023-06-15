@@ -9,7 +9,8 @@ This service works with `founders.txt` file and returns founders' names listed i
 1. Clone GitHub repository
 2. Run `nvm use`
 3. Run `npm install`
-4. Run `npm run dev`
+4. Run `npm run build`
+5. Run `npm start`
 
 # How to test?
 
