@@ -9,7 +9,7 @@ This service works with `founders.txt` file and returns founders' names listed i
 1. Clone GitHub repository
 2. Run `nvm use`
 3. Run `npm install`
-4. Run `npm run start`
+4. Run `npm run dev`
 
 # How to test?
 
@@ -21,12 +21,30 @@ Following CURLs can be used to test the functionality.
 curl --location --request GET 'http://localhost:8000/founders'
 ```
 
-### POST `/founders/check`
+### POST `/founders`
+
+| Property | Type              | Comments            |
+| -------- | ----------------- | ------------------- |
+| name     | string - required | Name of the founder |
 
 ```curl
-curl --location --request POST 'http://localhost:8000/founders/check' \
+curl --location --request POST 'http://localhost:8000/founders' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "name": "Inga Konovalova"
+    "name": "Tõnu Taru"
+}'
+```
+
+### POST `/founders/checkExistence`
+
+| Property | Type              | Comments            |
+| -------- | ----------------- | ------------------- |
+| name     | string - required | Name of the founder |
+
+```curl
+curl --location --request POST 'http://localhost:8000/founders/checkExistence' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "Taavi Tuvike"
 }'
 ```
